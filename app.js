@@ -8,6 +8,8 @@ const cors = require("cors");
 // 将 cors 注册为全局中间件
 app.use(cors());
 
+app.use(express.urlencoded({ extended: false }));
+
 // 导入并注册用户路由模块
 const userRouter = require("./router/user");
 app.use("/api", userRouter);
